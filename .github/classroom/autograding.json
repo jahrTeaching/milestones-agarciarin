@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "hello",
+      "setup": "",
+      "run": "python sources/hello.py",
+      "input": "",
+      "output": "Hello",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "hello_name",
+      "setup": "",
+      "run": "python sources/hello_name.py",
+      "input": "John",
+      "output": "Hello John ",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
