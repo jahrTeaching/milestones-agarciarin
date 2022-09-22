@@ -1,6 +1,6 @@
 #main
 import numpy as np
-import Functions as fun
+import functions as fun
 import matplotlib.pyplot as plt
 
 #const
@@ -9,7 +9,7 @@ V0 = 1.     #[m/s]
 Zeta0 = 0.  #[deg]
 t0 = 0.     #[s]
 dt = 10**-2 #[s] 
-tf = 1000.    #[s]
+tf = 10.    #[s]
 N = int(tf/dt)+1
 
 X_Euler = np.zeros([5,N]) #State vector [rx, ry, vx, vy, t]
