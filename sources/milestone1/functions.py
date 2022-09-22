@@ -4,19 +4,21 @@ import math
 import matplotlib.pyplot as plt
 
 def InitStateVector(r, v, zeta, t):
-    rx = r*math.cos(zeta)
-    ry = r*math.sin(zeta)
-    vx = -v*math.sin(zeta)
-    vy = v*math.cos(zeta)
+    zetaRad = math.radians(zeta)
+    rx = r*math.cos(zetaRad)
+    ry = r*math.sin(zetaRad)
+    vx = -v*math.sin(zetaRad)
+    vy = v*math.cos(zetaRad)
     return [rx, ry, vx, vy, t]
 
 #Orbit
 def Orbits(X):
-    rx = X[0]
-    ry = X[1]
-    vx = X[2]
-    vy = X[3]
-    return [vx, vy, -rx/(rx**2+ry**2)**(3/2), -ry/(rx**2+ry**2)**(3/2)]
+    d = (X[0]**2 + X[1]**2)**1.5
+    rx = -X[0]/d
+    ry = -X[1]/d
+    dxdt = X[2]
+    dydt = X[3]
+    return [dxdt, dydt, rx, ry]
 
 #Euler
 def ExplicitEuler(X, dt, N):
@@ -36,13 +38,13 @@ def v_modulus(X, N):
     return V
 
 #Graphics
-def plot_Euler_Position(X):
+def plot_Position(X):
     plt.figure(1)
     plt.plot(X[0,:], X[1,:])
     plt.xlabel('Rx [m]')
     plt.ylabel('Ry [m]')  
 
-def plot_Euler_V_vs_T(X, N):
+def plot_V_vs_T(X, N):
     V = v_modulus(X, N)
     plt.figure(2)
     plt.plot(X[4,:], V[0,:])
