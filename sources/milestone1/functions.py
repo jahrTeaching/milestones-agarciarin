@@ -3,13 +3,13 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-def InitStateVector(r, v, zeta, t):
+def InitStateVector(r, v, zeta):
     zetaRad = math.radians(zeta)
     rx = r*math.cos(zetaRad)
     ry = r*math.sin(zetaRad)
     vx = -v*math.sin(zetaRad)
     vy = v*math.cos(zetaRad)
-    return [rx, ry, vx, vy, t]
+    return [rx, ry, vx, vy]
 
 #Orbit
 def Orbits(X):
@@ -18,35 +18,34 @@ def Orbits(X):
     ry = -X[1]/d
     dxdt = X[2]
     dydt = X[3]
-    return [dxdt, dydt, rx, ry]
+    return np.array([dxdt, dydt, rx, ry])
+
+#Cauchy
+def CauchyProblem(X0, t, f, method):
+    X = np.array(np.zeros([len(X0), len(t)]))
+    X[:,0] = X0
+    for i in range(len(t)-1):
+        dt = t[i+1] - t[i]
+        X[:,i+1] = method(X[:,i], dt, f)
+
+    return X
 
 #Euler
-def ExplicitEuler(X, dt, N):
-    for i in range(0, N-1):
-        X[0,i+1] = X[0,i] + dt*Orbits(X[:,i])[0]
-        X[1,i+1] = X[1,i] + dt*Orbits(X[:,i])[1]
-        X[2,i+1] = X[2,i] + dt*Orbits(X[:,i])[2]
-        X[3,i+1] = X[3,i] + dt*Orbits(X[:,i])[3]
-        X[4,i+1] = X[4,i] + dt
-    return X
-   
-#Velocity modulus
-def v_modulus(X, N):
-    V = np.zeros([1,N])
-    for i in range(0, N):
-        V[:,i] = (X[2,i]**2+X[3,i]**2)**(1/2)
-    return V
+def ExplicitEuler(X, dt, f):
+    return X + dt*f(X)
+
+#RK4
+def RungeKutta4(X, dt, f):
+    k1 = f(X)
+    k2 = f(X+dt*k1/2)
+    k3 = f(X+dt*k2/2)
+    k4 = f(X+dt*k3)
+    return X + dt*(k1 + 2*k2 + 2*k3 + k4)/6
 
 #Graphics
-def plot_Position(X):
-    plt.figure(1)
+def plot_Position(X, n, title):
+    plt.figure(n)
     plt.plot(X[0,:], X[1,:])
+    plt.title(title)
     plt.xlabel('Rx [m]')
     plt.ylabel('Ry [m]')  
-
-def plot_V_vs_T(X, N):
-    V = v_modulus(X, N)
-    plt.figure(2)
-    plt.plot(X[4,:], V[0,:])
-    plt.xlabel('Time [s]')
-    plt.ylabel('Velocity (modulus) [m/s]') 
