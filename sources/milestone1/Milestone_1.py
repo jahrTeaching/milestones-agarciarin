@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 R0 = 1.             #[m]
 V0 = 1.             #[m/s]
 Zeta0 = 0.          #[deg]
-dt = 10**-2         #[s] 
-tf = 10.            #[s]
+dt = 0.001          #[s] 
+tf = 30.            #[s]
 
 N = int(tf/dt)+1    #Nº steps
 t = np.linspace(0, tf, N)
