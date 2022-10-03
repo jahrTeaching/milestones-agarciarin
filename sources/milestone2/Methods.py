@@ -17,7 +17,8 @@ def InverseEuler(U, dt, t, F):
     def Residual(X): 
         return X - U - dt * F(X, t)
 
-    return scipyop.fsolve(Residual, U)
+    uu = scipyop.newton(func = Residual, x0 = U, tol = 10e-3) #tol: error of the zero value (necesarry if not RuntimeError)
+    return uu
 
 #Crank-Nicolson
 def CrankNicolson(U, dt, t, F): 
@@ -25,4 +26,5 @@ def CrankNicolson(U, dt, t, F):
          return  X - a - dt/2 *  F(X, t + dt)
 
     a = U  +  dt/2 * F(U, t)  
-    return scipyop.fsolve(Residual_CN, U)
+    uu = scipyop.newton(Residual_CN, U)
+    return uu

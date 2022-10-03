@@ -40,7 +40,3 @@ Met_names = np.array(["Euler", "RK4", "Inverse Euler", "CN"])
 fun.plot_Positions(UU, Met_names, dt)
 fun.plot_energy(E, Met_names, t)
 plt.show()
-
-
-
-
