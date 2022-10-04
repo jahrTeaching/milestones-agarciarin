@@ -1,0 +1,49 @@
+1) Fork ATCSim == clona el repository de paco en uno mio, porque al de Paco no se puede hacer push
+2) Clone en pc == 'git clone https://github.com/agarciarin/ATCSim.git'
+3) Añadir el repositorio de Paco como 'upstream' == 'git remote add upstream https://github.com/fmrico/ATCSim.git'
+          conexiones remotas, para hacer pull:
+          'git remote show': origin == repositorio mio
+                             upstream == repositorio de paco
+
+4) Actualizar mi repositorio local con el repositorio de Paco == 'git pull upstream master'
+   Actualizar mi repositorio local con mi repositorio de github == 'git pull'
+ 
+/*
+5) Actualizar mi branch en el que este de github
+    con mi repositorio local == 'git push'
+*/
+
+
+) 'git status' == muestra los archivos que han sido modificados desde el ultimo commit
+) 'git show' == muestra algo
+
+
+
+Branchs:
+  ) 'git checkout -b "nombre branch"' == crear un nuevo branch
+  ) 'git checkout "nombre branch"' == cambiar de un branch a otro
+  ) 'git branch' == muestra las ramas que hay
+  ) 'git branch -d "branch to remove"' == borra el branch "branch to remove"
+  ) 'git checkout "nombre fichero"' == deja el fichero antes de haber realizado el commit
+
+
+
+Fusionar dos branchs:
+  1) 'git merge <branch>' == fusiono otra rama a mi rama activa
+  2) Resolver conflictos, si los hay
+  3) 'git add <filename>' == fusionar los archivos que hayas modificado
+  4) 'git diff <source_branch> <target_branch>' == revisar cambios antes de hacerlos
+
+
+
+Actualizar repositorio remoto(branch en la que estoy):
+Desde el branch en el que estes:
+  1) 'git add .' == añadir todos los archivos
+     'git add archivo' == añadir archivo
+  2) 'git commit -m "comentario del cambio"'
+Hasta aqui solo se actualiza el branch local.
+
+  3) 'git push origin master' == se actualiza el branch master remoto
+     'git push origin branch1' == se actualiza el branch1 remoto
+     'git push origin <new branch>' == subo al repositorio remoto <new branch>
+  4) *Si apareciese un codigo de error-> se copia y se pone*

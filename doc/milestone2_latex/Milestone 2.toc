@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {section}{\numberline {2}Código de Python}{1}{section.2}%
+\contentsline {section}{\numberline {3}Resultados de los métodos}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Euler explícito}{1}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Runge-Kutta de cuarto orden}{1}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Euler implícito o inverso}{1}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Crank-Nicolson}{1}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Comparación métodos}{1}{section.4}%
