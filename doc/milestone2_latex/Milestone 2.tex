@@ -135,24 +135,67 @@ Para este ejercicio se ha procedido a una separación del programa principal o $
 El programa principal contiene las condiciones iniciales del problema a resolver y va llamando a los distintos subprogramas o funciones para obtener los distintos resultados según el método que se use. Por tanto en el programa $"main"$ se tienen todos los datos calculados de los distintos métodos que aquí se implementan. Estos datos se almacenan en una variable, la cual se pasa como argumento a las funciones encargadas de dibujar las gráficas que se encuentran definidas en otro archivo distinto.
 
 
+Aquí se explica el código con pantallazos y demás.................
+
 \section{Resultados de los métodos}
-\subsection{Euler explícito}
+Se ha fijado un tiempo total de simulación de 30 segundos y se varía el intervalo de tiempo de integración del método de cálculo numérico $\Delta t$.
+\subsection{Simulaciones con: $\Delta t = 0.1 s$}
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.1_fsolve_pos.png}
+	\caption{Resolución órbita de Kepler por varios métodos durante 30$s$, utilizando $fsolve$.}
+\end{figure}
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.1_fsolve_energy.png}
+	\caption{Energía específica con $\Delta t = 0.1 s$, utilizando $fsolve$.}
+\end{figure}
 
 
 
-\subsection{Runge-Kutta de cuarto orden}
+\subsection{Simulaciones con: $\Delta t = 0.01 s$}
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.01_fsolve_pos.png}
+	\caption{Resolución órbita de Kepler por varios métodos durante 30$s$, utilizando $fsolve$.}
+\end{figure}
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.01_fsolve_energy.png}
+	\caption{Energía específica con $\Delta t = 0.01 s$, utilizando $fsolve$.}
+\end{figure}
 
 
 
-\subsection{Euler implícito o inverso}
+\subsection{Simulaciones con: $\Delta t = 0.001 s$}
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.001_fsolve_pos.png}
+	\caption{Resolución órbita de Kepler por varios métodos durante 30$s$, utilizando $fsolve$.}
+\end{figure}
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.001_fsolve_energy.png}
+	\caption{Energía específica con $\Delta t = 0.001 s$, utilizando $fsolve$.}
+\end{figure}
+
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.001_newton_pos.png}
+	\caption{Resolución órbita de Kepler por varios métodos durante 30$s$, utilizando $newton$.}
+\end{figure}
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.95\textwidth]{FIGURES/dt0.001_fsolve_energy.png}
+	\caption{Energía específica con $\Delta t = 0.001 s$, utilizando $newton$.}
+\end{figure}
 
 
 
-\subsection{Crank-Nicolson}
-
-
-
-\section{Comparación métodos}
 
 
 
