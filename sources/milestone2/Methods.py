@@ -17,7 +17,7 @@ def InverseEuler(U, dt, t, F):
     def Residual(X): 
         return X - U - dt * F(X, t)
 
-    a = scipyop.newton(func = Residual, x0 = U, tol = 10e-5, maxiter = 1000) #tol: error of the zero value (necesarry if not RuntimeError)
+    a = scipyop.newton(func = Residual, x0 = U, tol = 10e-5, maxiter = 10000) #tol: error of the zero value (necesarry if not RuntimeError)
     return a
 
 #Crank-Nicolson

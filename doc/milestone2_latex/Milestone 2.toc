@@ -1,5 +1,12 @@
-\babel@toc {spanish}{}\relax 
+\babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
 \contentsline {section}{\numberline {2}Código de Python}{1}{section.2}%
-\contentsline {section}{\numberline {3}Resultados de los métodos}{1}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Simulaciones con: $\Delta t = 0.001 s$}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {2.1}\textit {Milestone\_2.py}}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}\textit {CauchyProblem.py}}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}\textit {Methods.py}}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}\textit {Orbits.py}}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}\textit {Constant.py}}{4}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}\textit {Functions.py}}{4}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Resultados de los métodos}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Simulaciones con: $\Delta t = 0.1 s$}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Simulaciones con: $\Delta t = 0.001 s$}{7}{subsection.3.2}%
