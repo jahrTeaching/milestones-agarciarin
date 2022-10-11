@@ -1,10 +1,13 @@
 Create and activate virtual enviroment:
-create venv -> 'python -m venv "myenv"'
-activate venv -> 'cd "myenv"\Scripts\activate' // '.\activate'
-                 '.\.myenv2.0\Scripts\activate'
+create venv     -> 'python -m venv ".myenv"'
+activate venv   -> 'cd ".myenv"\Scripts\activate' // '.\activate'
+                    '.\.myenv\Scripts\activate'
 
 
 Install packages:
-upgrade pip 		-> 'pip install --upgrade pip' // 'pip3 install --upgrade pip'
+upgrade pip 		    -> 'pip install --upgrade pip' // 'pip3 install --upgrade pip'
 ensure pip is installed -> 'python -m ensurepip --upgrade' // 'python3 -m ensurepip --upgrade'
-install package 	-> 'pip install "matplotlib"' // 'pip3 install "matplotlib"'
+install package 	    -> 'pip install "matplotlib"' // 'pip3 install "matplotlib"'
+
+Check packages version: -> 'pip freeze'
+
