@@ -18,7 +18,7 @@ def plot_positions(UU, names, dt):
     z = 0
     fig, axs = plt.subplots(a, b)
     fig.suptitle("Orbits Position, $\Delta t$ = " + str(dt) + "[s]")
-    fig.tight_layout(pad=1.5)
+    fig.tight_layout(pad=0.8)
 
     for i in range(a):
         for y in range(b):
@@ -51,7 +51,7 @@ def plot_error(Errors, names, t, dt):
     z = 0
     fig, axs = plt.subplots(a, b)
     fig.suptitle("Orbits Numerical Errors, $\Delta t$ = " + str(dt) + "[s]")
-    fig.tight_layout(pad=1.5)
+    fig.tight_layout(pad=0.8)
 
     for i in range(a):
         for y in range(b):
@@ -86,7 +86,7 @@ def plot_conv_rate(Conv_rate, names, dt):
     z = 0
     fig, axs = plt.subplots(a, b)
     fig.suptitle("Convergence Rate, $\Delta t$ = " + str(dt) + "[s]")
-    fig.tight_layout(pad=1.5)
+    fig.tight_layout(pad=0.8)
 
     for i in range(a):
         for y in range(b):
@@ -97,7 +97,7 @@ def plot_conv_rate(Conv_rate, names, dt):
     for ax in axs.flat:
         ax.set(xlabel='log(N)', ylabel='log(E)')
 
-#comparision convergence rate
+#comparison convergence rate
 def plot_comparision_cr(Conv_rate, names, dt): 
     sns.set()
     plt.figure()
