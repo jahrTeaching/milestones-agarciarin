@@ -29,6 +29,8 @@ def plot_positions(UU, names, dt):
     for ax in axs.flat:
         ax.set(xlabel='Rx [m]', ylabel='Ry [m]')
 
+    #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_position.png', dpi=200)
+
 
 #plot specific energy (all same graphic)
 def plot_energy(e, names, t, dt): 
@@ -41,6 +43,7 @@ def plot_energy(e, names, t, dt):
     plt.xlabel('Time [s]')
     plt.ylabel('Energy')
     plt.legend()
+    #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_energy.png', dpi=200)
 
 
 #subplot all errors
@@ -65,6 +68,8 @@ def plot_error(Errors, names, t, dt):
         ax.set(xlabel='Time [s]', ylabel='R error [m]')
         ax.legend()
 
+    #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_error.png', dpi=200)
+
 #plot errors position modules
 def plot_met_error(Errors, names, t, dt): 
     sns.set()
@@ -76,6 +81,7 @@ def plot_met_error(Errors, names, t, dt):
     plt.xlabel('Time [s]')
     plt.ylabel('Error [m]')
     plt.legend()
+    #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_error_comparison.png', dpi=200)
 
 
 #subplot all convergence rates
@@ -97,6 +103,8 @@ def plot_conv_rate(Conv_rate, names, dt):
     for ax in axs.flat:
         ax.set(xlabel='log(N)', ylabel='log(E)')
 
+    #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_convergence.png', dpi=200)
+
 #comparison convergence rate
 def plot_comparision_cr(Conv_rate, names, dt): 
     sns.set()
@@ -109,3 +117,4 @@ def plot_comparision_cr(Conv_rate, names, dt):
     plt.xlabel('log(N)')
     plt.ylabel('log(E)')
     plt.legend()
+    #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_convergence_comparison.png', dpi=200)
