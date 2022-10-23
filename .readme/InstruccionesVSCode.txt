@@ -12,7 +12,7 @@ install package 	    -> 'pip install "matplotlib"' // 'pip3 install "matplotlib"
 Check packages version inside venv: -> 'pip freeze'
 Check python version                -> 'python --version'
 
-Create requeriments.txt & install packages automatically:
-Create  -> 'pip freeze > requeriments.txt'
-Copy 'requeriments.txt' file in main folder
-Install -> 'pip install -r .\requeriments.txt'
+Create requirements.txt & install packages automatically:
+Create  -> 'pip freeze > requirements.txt'
+Copy 'requirements.txt' file in main folder
+Install -> 'pip install -r .\requirements.txt'
