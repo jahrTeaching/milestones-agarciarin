@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from pandas import array
 
 import fun.cauchy_problem as cp
 import fun.convergence_rate as cr
