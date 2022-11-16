@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from pandas import array
 
 import fun.cauchy_problem as cp
 import fun.convergence_rate as cr
@@ -9,6 +8,8 @@ import fun.orbits as orb
 import fun.oscillator as osc
 import fun.plots as plo
 import fun.richardson_error as re
+import fun.methods as met
+import fun.stability_regions as sr
 
 def main():
 
@@ -17,9 +18,9 @@ def main():
     tf = 14.                            #[s]
     #U0 = fun.init_state_vector_orbits(1, 1, 0) #(R[m], V[m/s], Zeta[deg]) -> Orbits
     U0 = np.array([1, 0])                     #(R[m], V[m/s], Zeta[deg]) -> Oscilator
-    mets = np.array(["Euler", "RK4", "Inverse Euler", "CN", "Leap Frog"])
+    mets = [met.explicit_euler, met.runge_kutta4, met.inverse_euler, met.crank_nicolson, met.leap_frog]
 
-    m = 5   #Nº points convergence
+    m = 2   #Nº points convergence
     UU = np.empty(len(Dt), dtype=np.ndarray)
     TT = np.empty(len(Dt), dtype=np.ndarray)
 
@@ -34,20 +35,21 @@ def main():
         CR = np.zeros([len(mets), 2, m])
 
         for i in range(len(mets)):
-            method, q = fun.names_order(mets[i])
+            q = fun.order(mets[i])
         
             """
             #Orbits
-            #U[i,:] = cp.cauchy_problem(U0, t, orb.orbits, method)       #Cauchy solver orbits
-            #En[i,:] = orb.orbit_energy(U[i,:], t)                       #Energy orbit
-            #E[i,:] = re.richardson_error(U0, t, orb.orbits, method, q)  #Error Richardson
-            #CR[i,:] = cr.convergence_rate(U0, t, orb.orbits, method, m) #Convergence Rate
+            U[i,:] = cp.cauchy_problem(U0, t, orb.orbits, mets[i])       #Cauchy solver orbits
+            En[i,:] = orb.orbit_energy(U[i,:], t)                        #Energy orbit
+            E[i,:] = re.richardson_error(U0, t, orb.orbits, mets[i], q)  #Error Richardson
+            CR[i,:] = cr.convergence_rate(U0, t, orb.orbits, mets[i], m) #Convergence Rate
             """
         
             #Oscillator
-            U[i,:] = cp.cauchy_problem(U0, t, osc.oscilator, method)   
-            #E[i,:] = re.richardson_error(U0, t, osc.oscilator, method, q)  
-            #CR[i,:] = cr.convergence_rate(U0, t, osc.oscilator, method, m)
+            U[i,:] = cp.cauchy_problem(U0, t, osc.oscilator, mets[i])   
+            #E[i,:] = re.richardson_error(U0, t, osc.oscilator, mets[i], q)  
+            #CR[i,:] = cr.convergence_rate(U0, t, osc.oscilator, mets[i], m)
+
 
         UU[j] = U
         TT[j] = t
@@ -65,8 +67,27 @@ def main():
         #plo.subplot_oscillators(U, t, mets, Dt[j])
 
 
+    
+    #Stability
+    a = 3
+    n = 100
+    x = np.linspace(-a, a, n)
+    y = np.linspace(-a, a, n)
+    ST = np.empty(len(mets), dtype=np.ndarray)
+
+    for z in range(len(mets)):
+        ST[z] = sr.stability_regions(x, y, mets[z])
+        plo.plot_stability(x, y, ST[z], mets[z].__name__)
+
+    
+
     #Graphics
     plo.plot_osc_dt(UU, TT, Dt, mets)
+
+    #stab = sr.stability_regions(x, y, mets[4])
+    #plo.plot_stability(x, y, stab)
+
+
 
 
     plt.draw()

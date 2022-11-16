@@ -52,15 +52,15 @@ def plot_aux4(subplo, t, U, nam):
 
 
 #subplot all position vectors
-def plot_positions(UU, names, dt): 
+def plot_positions(UU, mets, dt): 
     sns.set()
 
-    if len(names) % 2 == 0: #par
-        b = int(len(names)/2)
+    if len(mets) % 2 == 0: #par
+        b = int(len(mets)/2)
     else:                   #impar
-        b = int(len(names)/2) + 1
+        b = int(len(mets)/2) + 1
     
-    if len(names) >= 2:
+    if len(mets) >= 2:
         a = 2
     else:
         a = 1
@@ -73,22 +73,22 @@ def plot_positions(UU, names, dt):
     z = 0
 
     for i in range(b):
-        if ((len(names)%2 != 0) and (i >= b-1)): #odd and last column
-            plot_aux1(gs[0, i], UU[z,0], UU[z,1], names[z])
+        if ((len(mets)%2 != 0) and (i >= b-1)): #odd and last column
+            plot_aux1(gs[0, i], UU[z,0], UU[z,1], mets[z].__name__)
         else:
             for j in range(a):
-                plot_aux1(gs[j, i], UU[z,0], UU[z,1], names[z])
+                plot_aux1(gs[j, i], UU[z,0], UU[z,1], mets[z].__name__)
                 z = z + 1
 
     #plt.savefig('doc/milestone4_latex/FIGURES/dt'+str(dt)+'_position.png', dpi=200)
 
 
 #plot specific energy (all same graphic)
-def plot_energy(e, names, t, dt): 
+def plot_energy(e, mets, t, dt): 
     sns.set()
     plt.figure()
-    for i in range(len(names)):
-        plt.plot(t, e[i,:], label=names[i])
+    for i in range(len(mets)):
+        plt.plot(t, e[i,:], label=mets[i].__name__)
 
     plt.title("Specific Energy $\Delta t$ = " + str(dt) + "[s]")
     plt.xlabel('Time [s]')
@@ -98,15 +98,15 @@ def plot_energy(e, names, t, dt):
 
 
 #subplot all errors
-def plot_error(Errors, names, t, dt): 
+def plot_error(Errors, mets, t, dt): 
     sns.set()
 
-    if len(names) % 2 == 0: #par
-        b = int(len(names)/2)
+    if len(mets) % 2 == 0: #par
+        b = int(len(mets)/2)
     else:                   #impar
-        b = int(len(names)/2) + 1
+        b = int(len(mets)/2) + 1
 
-    if len(names) >= 2:
+    if len(mets) >= 2:
         a = 2
     else:
         a = 1
@@ -119,20 +119,20 @@ def plot_error(Errors, names, t, dt):
     z = 0
 
     for i in range(b):
-        if ((len(names)%2 != 0) and (i >= b-1)): #odd and last column
-            plot_aux2(gs[0, i], t, Errors[z,0], Errors[z,1], Errors[z,len(Errors[0,:])-1], names[z])
+        if ((len(mets)%2 != 0) and (i >= b-1)): #odd and last column
+            plot_aux2(gs[0, i], t, Errors[z,0], Errors[z,1], Errors[z,len(Errors[0,:])-1], mets[z].__name__)
         else:
             for j in range(a):
-                plot_aux2(gs[j, i], t, Errors[z,0], Errors[z,1], Errors[z,len(Errors[0,:])-1], names[z])
+                plot_aux2(gs[j, i], t, Errors[z,0], Errors[z,1], Errors[z,len(Errors[0,:])-1], mets[z].__name__)
                 z = z + 1
             
 
 #plot errors position modules
-def plot_met_error(Errors, names, t, dt): 
+def plot_met_error(Errors, mets, t, dt): 
     sns.set()
     plt.figure()
-    for i in range(len(names)):
-        plt.plot(t, Errors[i,len(Errors[0,:])-1], label=names[i])
+    for i in range(len(mets)):
+        plt.plot(t, Errors[i,len(Errors[0,:])-1], label=mets[i].__name__)
 
     plt.title("Numerical Errors comparison, $\Delta t$ = " + str(dt) + "[s]")
     plt.xlabel('Time [s]')
@@ -141,15 +141,15 @@ def plot_met_error(Errors, names, t, dt):
     #plt.savefig('doc/milestone3_latex/FIGURES/dt'+str(dt)+'_error_comparison.png', dpi=200)
 
 
-def plot_conv_rate(Conv_rate, names, dt):
+def plot_conv_rate(Conv_rate, mets, dt):
     sns.set()
 
-    if len(names) % 2 == 0: #par
-        b = int(len(names)/2)
+    if len(mets) % 2 == 0: #par
+        b = int(len(mets)/2)
     else:                   #impar
-        b = int(len(names)/2) + 1
+        b = int(len(mets)/2) + 1
 
-    if len(names) >= 2:
+    if len(mets) >= 2:
         a = 2
     else:
         a = 1
@@ -162,21 +162,21 @@ def plot_conv_rate(Conv_rate, names, dt):
     z = 0
 
     for i in range(b):
-        if ((len(names)%2 != 0) and (i >= b-1)): #odd and last column
-            plot_aux3(gs[0, i], Conv_rate[z,0], Conv_rate[z,1], names[z])
+        if ((len(mets)%2 != 0) and (i >= b-1)): #odd and last column
+            plot_aux3(gs[0, i], Conv_rate[z,0], Conv_rate[z,1], mets[z].__name__)
         else:
             for j in range(a):
-                plot_aux3(gs[j, i], Conv_rate[z,0], Conv_rate[z,1], names[z])
+                plot_aux3(gs[j, i], Conv_rate[z,0], Conv_rate[z,1], mets[z].__name__)
                 z = z + 1
 
 
 #comparison convergence rate
-def plot_comparision_cr(Conv_rate, names, dt): 
+def plot_comparision_cr(Conv_rate, mets, dt): 
     sns.set()
     plt.figure()
-    for i in range(len(names)):
+    for i in range(len(mets)):
         cr = Conv_rate[i,:]
-        plt.plot(cr[0,:], cr[1,:], '--o', markersize=10, label=names[i])
+        plt.plot(cr[0,:], cr[1,:], '--o', markersize=10, label=mets[i].__name__)
 
     plt.title("Convergence Rate comparison, $\Delta t$ = " + str(dt) + "[s]")
     plt.xlabel('log(N)')
@@ -199,15 +199,15 @@ def plot_oscillator(U, t, dt, name):
     
 
 #subplot all oscillators
-def subplot_oscillators(UU, t, names, dt):
+def subplot_oscillators(UU, t, mets, dt):
     sns.set()
 
-    if len(names) % 2 == 0: #par
-        b = int(len(names)/2)
+    if len(mets) % 2 == 0: #par
+        b = int(len(mets)/2)
     else:                   #impar
-        b = int(len(names)/2) + 1
+        b = int(len(mets)/2) + 1
 
-    if len(names) >= 2:
+    if len(mets) >= 2:
         a = 2
     else:
         a = 1
@@ -220,11 +220,11 @@ def subplot_oscillators(UU, t, names, dt):
     z = 0
 
     for i in range(b):
-        if ((len(names)%2 != 0) and (i >= b-1)): #odd and last column
-            plot_aux4(gs[0, i], t, UU[z,:], names[z])
+        if ((len(mets)%2 != 0) and (i >= b-1)): #odd and last column
+            plot_aux4(gs[0, i], t, UU[z,:], mets[z].__name__)
         else:
             for j in range(a):
-                plot_aux4(gs[j, i], t, UU[z,:], names[z])
+                plot_aux4(gs[j, i], t, UU[z,:], mets[z].__name__)
                 z = z + 1
 
 
@@ -243,8 +243,8 @@ def plot_osc_dt(UU, TT, Dt, mets):
             ax1.plot(TT[i], UU[i][z,0], label="$\Delta t$ = " + str(Dt[i]) + "[s]")
             ax2.plot(TT[i], UU[i][z,1], label="$\Delta t$ = " + str(Dt[i]) + "[s]")
 
-        ax1.set_title("Oscillator Position, " + mets[z])     
-        ax2.set_title("Oscillator Velocity, " + mets[z])
+        ax1.set_title("Oscillator Position, " + mets[z].__name__)     
+        ax2.set_title("Oscillator Velocity, " + mets[z].__name__)
         ax1.set(xlabel='Time [s]', ylabel='Position [m]')
         ax2.set(xlabel='Time [s]', ylabel='Velocity [m/s]')
         ax1.set_xlim([TT[0][0], TT[0][-1]])
@@ -252,3 +252,13 @@ def plot_osc_dt(UU, TT, Dt, mets):
         ax1.legend()
         ax2.legend()
 
+
+#plot stability
+def plot_stability(x, y, rho, name):
+    sns.set()
+    plt.figure()
+    plt.contour(x, y, np.transpose(rho), np.linspace(0, 1, 11))
+    plt.title("Absolute Stability Region for " + name)
+    plt.xlabel('Re')
+    plt.ylabel('Imag')
+    plt.axis('equal')

@@ -13,21 +13,16 @@ def init_state_vector_orbits(r, v, zeta):
     vy = v*math.cos(zetaRad)
     return np.array([rx, ry, vx, vy])
 
-def names_order(name_met):
-    if name_met == 'Euler':
-        method = met.explicit_euler
+def order(mets):
+    if mets == met.explicit_euler:
         q = 1
-    elif name_met == 'RK4':
-        method = met.runge_kutta4
+    elif mets == met.runge_kutta4:
         q = 4
-    elif name_met == 'Inverse Euler':
-        method = met.inverse_euler
+    elif mets == met.inverse_euler:
         q = 1
-    elif name_met == 'CN':
-        method = met.crank_nicolson
+    elif mets == met.crank_nicolson:
         q = 2
     else:
-        method = met.leap_frog
         q = 2
 
-    return method, q
+    return q
