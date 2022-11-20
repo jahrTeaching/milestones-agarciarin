@@ -1,11 +1,10 @@
-import numpy as np
 from table import my_table
 
 # TIC-TAC-TOE in terminal, just for fun
 
 def main():
     #create table (rows, columns, n)
-    table2 = my_table(5, 5, 3) 
+    table2 = my_table(3, 3, 3) 
     table2.printTable()
 
     i = 0
