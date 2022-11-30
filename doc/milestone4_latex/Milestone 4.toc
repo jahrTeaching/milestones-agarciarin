@@ -18,3 +18,4 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Método de Euler inverso}{9}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}Método de Crank-Nicholson}{9}{subsubsection.3.2.4}%
 \contentsline {subsubsection}{\numberline {3.2.5}Método de Leap-Frog}{10}{subsubsection.3.2.5}%
+\contentsline {section}{\numberline {4}Conclusiones}{10}{section.4}%
