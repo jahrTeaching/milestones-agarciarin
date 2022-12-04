@@ -8,7 +8,7 @@ def plot_3D(U, t, Dt, m, Nb, Nc): #(Values, time, Delta t, method, Nbodies, Ncoo
     sns.set()
     plt.figure(figsize=(10,9))
     ax = plt.axes(projection='3d')
-    col = ['b', 'r', 'g', 'y']
+    col = ['c', 'r', 'g', 'y']
 
     for i in range(Nb):
         a = 2*Nc*i

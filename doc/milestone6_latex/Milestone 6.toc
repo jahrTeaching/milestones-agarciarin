@@ -1,0 +1,16 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {section}{\numberline {2}Código de Python}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Diagrama de bloques}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}milestone\_6.py}{1}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}embedded\_rk.py}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}rest\_3b.py}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}plot\_lagr.py}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Resultados y análisis}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Determinación de los puntos de Lagrange}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Estabilidad de los puntos de Lagrange}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Órbitas alrededor de los puntos de Lagrange}{10}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Runge-Kutta de alto orden. \textit {RK87}}{10}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Runge-Kutta de orden 4}{14}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Simulaciones con otros métodos de resolución numérica}{18}{section*.31}%
+\contentsline {section}{\numberline {4}Conclusiones}{18}{section.4}%

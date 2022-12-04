@@ -4,8 +4,8 @@ import numpy as np
 
 from common.cauchy_problem import cauchy_problem
 import common.functions as fn
-import common.methods as met
-import common.plot_n_body as plo_n
+import common.methods.methods as met
+import common.plots.plot_n_body as plo_n
 import common.problems.n_body as nb
 
 

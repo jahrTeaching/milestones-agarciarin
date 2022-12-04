@@ -18,6 +18,10 @@
 ) 'git show' == muestra algo
 
 
+Commits:
+  ) 'git log' == muestra historial de commits
+  ) 'git checkout <commit_id> .' == volver a un commit anterior
+
 
 Branchs:
   ) 'git checkout -b "nombre branch"' == crear un nuevo branch

@@ -1,5 +1,4 @@
 from scipy.optimize import newton
-import numpy as np
 
 
 def explicit_euler(U, dt, t, f):

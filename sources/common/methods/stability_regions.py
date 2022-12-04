@@ -1,5 +1,5 @@
 from numpy import zeros, float64, abs
-from common.methods import leap_frog
+from common.ode_methods.methods import leap_frog
 
 def stability_regions(x, y, method):
     N = len(x)

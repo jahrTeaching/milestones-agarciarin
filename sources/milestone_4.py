@@ -6,10 +6,10 @@ import common.convergence_rate as cr
 import common.functions as fun
 import common.problems.orbits as orb
 import common.problems.oscillator as osc
-import common.plots as plo
+import common.plots.plots as plo
 import common.richardson_error as re
-import common.methods as met
-import common.stability_regions as sr
+import common.methods.methods as met
+import common.methods.stability_regions as sr
 
 def main():
 

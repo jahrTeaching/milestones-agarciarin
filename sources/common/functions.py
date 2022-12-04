@@ -2,7 +2,7 @@
 import math
 
 import numpy as np
-import common.methods as met
+import common.methods.methods as met
 
 #Initiate Vector
 def init_state_vector_orbits(r, v, zeta):
@@ -83,3 +83,17 @@ def init_state_nbody(Nb, Nc):
         U1[i, :, 1] = v[i,:]
 
     return U0
+
+
+#Initiate Lagrange points
+def init_lagr_points(Nl, Nc):
+    U0 = np.empty([Nl, 2*Nc])
+
+    U0[3,:] = np.array([0.8,   0.6, 0, 0, 0, 0])
+    U0[4,:] = np.array([0.8,  -0.6, 0, 0, 0, 0])
+    U0[2,:] = np.array([-0.1,    0, 0, 0, 0, 0])
+    U0[0,:] = np.array([0.1,     0, 0, 0, 0, 0])
+    U0[1,:] = np.array([1.1,     0, 0, 0, 0, 0])
+
+    return U0
+    

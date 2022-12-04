@@ -1,11 +1,12 @@
 import numpy as np
-from common.methods import explicit_euler, leap_frog
+from common.methods.methods import explicit_euler, leap_frog
 
 def cauchy_problem(U0, t, f, method):
     U = np.array(np.zeros([len(U0), len(t)]))
     U[:,0] = np.transpose(U0)
+    dt = t[1] - t[0]
+
     for i in range(len(t)-1):
-        dt = t[i+1] - t[i]
 
         if method == leap_frog:
             if t[i]==0:

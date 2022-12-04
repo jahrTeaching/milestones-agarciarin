@@ -4,9 +4,9 @@ import numpy as np
 import common.cauchy_problem as cp
 import common.convergence_rate as cr
 import common.functions as fun
-import common.methods as met
+import common.methods.methods as met
 import common.problems.orbits as orb
-import common.plots as plo
+import common.plots.plots as plo
 import common.richardson_error as re
 
 
